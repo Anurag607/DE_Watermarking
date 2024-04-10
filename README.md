@@ -1,7 +1,5 @@
 # SUMMARY :
 
-The proposed algorithm enhances the digital watermarking technique by balancing invisibility and robustness, crucial attributes for watermarking algorithms. It begins by converting a color host image from RGB to YIQ space, which aligns better with the human visual system. A three-level discrete wavelet transformation is applied to the luminance component Y, generating four frequency sub-bands. These sub-bands undergo singular value decomposition (SVD). The watermark embedding involves discrete wavelet transformation of a scrambled watermark image, with differential evolution algorithm optimizing the scaling factors for embedding, ensuring an adaptive choice that improves the algorithm's performance.
-
 # IMPLEMENTATION STEPS :
 
 1. **Color Space Conversion:** Convert the color host image from RGB to YIQ space to better match the human visual system.
@@ -12,6 +10,20 @@ The proposed algorithm enhances the digital watermarking technique by balancing 
 6. **Embedding:** Modify the singular values of the Y component's sub-bands with those of the watermark's sub-bands, adjusted by the scaling factors determined through DE.
 7. **Inverse Operations:** Conduct inverse SVD and inverse wavelet transformation to reconstruct the watermarked image in the YIQ space.
 8. **Convert Back to RGB:** Transform the watermarked image back to RGB color space for the final output.
+
+# IMPORTANT TERMS :
+
+1. RGB : The RGB colour model is the most common colour model used in Digital image processing and openCV. The colour image consists of 3 channels. One channel each for one colour. Red, Green and Blue are the main colour components of this model. All other colours are produced by the proportional ratio of these three colours only. 0 represents the black and as the value increases the colour intensity increases.
+2. **CMYK** : CMYK colour model is widely used in printers. It stands for Cyan, Magenta, Yellow and Black (key). It is a subtractive colour model. 0 represents the primary colour and 1 represents the lightest colour. In this model, point (1, 1, 1) represents black, and (0,0,0) represents white. It is a subtractive model thus the value is subtracted from 1 to vary from least intense to a most intense colour value.
+3. **HSV:** The image consists of three channels. Hue, Saturation and Value are three channels. This colour model does not use primary colours directly. It uses colour in the way humans perceive them. HSV colour when is represented by a cone. Hue is a colour component. Since the cone represents the HSV model, the hue represents different colours in different angle ranges. Saturation as the name suggest describes the percentage of the colour. Sometimes this value lies in the 0 to 1 range. 0 being the grey and 1 being the primary colour. Saturation describes the grey colour. The value represents the intensity of the colour chosen. Its value lies in percentage from 0 to 100. 0 is black and 100 is the brightest and reveals the colour. HSV model is used in histogram equalization and converting grayscale images to RGB colour images.
+4. **YIQ:** YIQ is the most widely colour model used in Television broadcasting. Y stands for luminance part and IQ stands for chrominance part. In the black and white television, only the luminance part (Y) was broadcast. The y value is similar to the grayscale part. The colour information is represented by the IQ part. YIQ model is used in the conversion of grayscale images to RGB colour images.
+
+# IMPORTANT FUNCTIONS :
+
+- **The `scipy.linalg.svd` Function : ** Used to compute the Singular Value Decomposition (SVD) of a given matrix A. **SVD** is a matrix factorization technique that decomposes a matrix into three separate matrices: **U**, **S**, and **V t**. The SVD of a matrix **A** with dimensions **m**×**n** is represented as: **A=U∗**S**∗**Vt\*\*\*\*
+  - **U** is the left singular vector matrix. It has orthogonal vectors that span the column space and gives information about how the columns of matrix A are related to each other.
+  - **S** is the singular value matrix. It has singular values that are the diagonal entries of the diagonal matrix representing the magnitudes of the singular vectors.
+  - **Vt** is the conjugate transpose of the right singular vector matrix. It has orthogonal vectors that span the row space and gives information about how the rows of matrix A are related to each other.
 
 # MATHEMATICAL FORMULAES :
 

@@ -3,7 +3,7 @@ import numpy as np
 import pywt
 from scipy.linalg import svd, diagsvd
 from scipy.optimize import differential_evolution
-from target.py import target_func
+from target import target_func
 
 def rgb_to_yiq(rgb_image):
     transformation_matrix = np.array([[0.299, 0.587, 0.114],
@@ -29,7 +29,7 @@ def apply_svd(matrix):
     return U, S, Vt
 
 def watermark_embedding(U, S, Vt, watermark_matrix, scale_factor):
-    S_w = S + scale_factor * watermark_matrix
+    S_w = (scale_factor * watermark_matrix) + S
     watermarked_matrix = np.dot(U, np.dot(diagsvd(S_w, *U.shape), Vt))
     return watermarked_matrix
 
@@ -39,8 +39,8 @@ def differential_evolution_optimization(bounds):
 
 def main():
     # Load your images
-    host_image = cv2.imread('./asstes/host_image.png')
-    watermark_image = cv2.imread('./asstes/watermark_image.png', cv2.IMREAD_GRAYSCALE)
+    host_image = cv2.imread('./assets/host_image.png')
+    watermark_image = cv2.imread('./assets/watermark_image.png', cv2.IMREAD_GRAYSCALE)
     
     # Convert to YIQ color space
     host_image_yiq = rgb_to_yiq(host_image / 255.0)  # Normalized
@@ -54,6 +54,9 @@ def main():
     
     # Example scale factor (use DE to find optimal)
     scale_factor = 0.05  # This should be optimized
+    
+    print(f'S: {S}')
+    print(f'SF: {scale_factor}')
     
     # Watermark embedding
     watermarked_cA = watermark_embedding(U, S, Vt, watermark_image, scale_factor)
