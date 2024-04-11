@@ -29,7 +29,10 @@ def apply_svd(matrix):
     return U, S, Vt
 
 def watermark_embedding(U, S, Vt, watermark_matrix, scale_factor):
-    S_w = (scale_factor * watermark_matrix) + S
+    # print(f'S: {S}')
+    # print(f'SF: {scale_factor}')
+    # print(f'WM: ${watermark_matrix}')
+    S_w = (scale_factor * watermark_matrix) 
     watermarked_matrix = np.dot(U, np.dot(diagsvd(S_w, *U.shape), Vt))
     return watermarked_matrix
 
@@ -54,9 +57,6 @@ def main():
     
     # Example scale factor (use DE to find optimal)
     scale_factor = 0.05  # This should be optimized
-    
-    print(f'S: {S}')
-    print(f'SF: {scale_factor}')
     
     # Watermark embedding
     watermarked_cA = watermark_embedding(U, S, Vt, watermark_image, scale_factor)

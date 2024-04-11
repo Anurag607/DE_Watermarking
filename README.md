@@ -20,10 +20,16 @@
 
 # IMPORTANT FUNCTIONS :
 
-- **The `scipy.linalg.svd` Function : ** Used to compute the Singular Value Decomposition (SVD) of a given matrix A. **SVD** is a matrix factorization technique that decomposes a matrix into three separate matrices: **U**, **S**, and **V t**. The SVD of a matrix **A** with dimensions **m**×**n** is represented as: **A=U∗**S**∗**Vt\*\*\*\*
+- **The `scipy.linalg.svd` Function :** Used to compute the Singular Value Decomposition (SVD) of a given matrix A. **SVD** is a matrix factorization technique that decomposes a matrix into three separate matrices: **U**, **S**, and **V t**. The SVD of a matrix **A** with dimensions **m**×**n** is represented as: **A=U∗**S**∗**Vt\*\*\*\*
   - **U** is the left singular vector matrix. It has orthogonal vectors that span the column space and gives information about how the columns of matrix A are related to each other.
   - **S** is the singular value matrix. It has singular values that are the diagonal entries of the diagonal matrix representing the magnitudes of the singular vectors.
   - **Vt** is the conjugate transpose of the right singular vector matrix. It has orthogonal vectors that span the row space and gives information about how the rows of matrix A are related to each other.
+- **scipy.linalg.diagsvd(s, _M_ , N)**
+  - **Parameters** **:**
+    - s(M,) or (N,) array_like - Singular values
+    - M : int, Size of the matrix whose singular values are s.
+    - **N :** int, Size of the matrix whose singular values are _s_ .
+  - **Returns:** **\*S\*\***(M, N) ndarray\*\*The S-matrix in the singular value decomposition
 
 # MATHEMATICAL FORMULAES :
 
