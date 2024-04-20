@@ -31,6 +31,11 @@
     - **N :** int, Size of the matrix whose singular values are _s_ .
   - **Returns:** **\*S\*\***(M, N) ndarray\*\*The S-matrix in the singular value decomposition
 
+# IMPORTANT TERMS :
+
+- **cA (Approximation Coefficients):** These coefficients represent the approximation of the input signal at a certain scale or level of resolution. They capture the low-frequency components of the signal. When performing the DWT, the input signal is filtered to retain only the approximation coefficients at each level.
+- **cD (Detail Coefficients):** These coefficients represent the details or high-frequency components of the input signal that are discarded during the approximation. They capture the high-frequency variations or details of the signal. The detail coefficients are obtained by filtering the input signal to retain only the high-frequency components at each level.
+
 # MATHEMATICAL FORMULAES :
 
 1. **Color Space Transformation from RGB to YIQ:**
