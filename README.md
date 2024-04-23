@@ -18,24 +18,6 @@
 3. **HSV:** The image consists of three channels. Hue, Saturation and Value are three channels. This colour model does not use primary colours directly. It uses colour in the way humans perceive them. HSV colour when is represented by a cone. Hue is a colour component. Since the cone represents the HSV model, the hue represents different colours in different angle ranges. Saturation as the name suggest describes the percentage of the colour. Sometimes this value lies in the 0 to 1 range. 0 being the grey and 1 being the primary colour. Saturation describes the grey colour. The value represents the intensity of the colour chosen. Its value lies in percentage from 0 to 100. 0 is black and 100 is the brightest and reveals the colour. HSV model is used in histogram equalization and converting grayscale images to RGB colour images.
 4. **YIQ:** YIQ is the most widely colour model used in Television broadcasting. Y stands for luminance part and IQ stands for chrominance part. In the black and white television, only the luminance part (Y) was broadcast. The y value is similar to the grayscale part. The colour information is represented by the IQ part. YIQ model is used in the conversion of grayscale images to RGB colour images.
 
-# IMPORTANT FUNCTIONS :
-
-- **The `scipy.linalg.svd` Function :** Used to compute the Singular Value Decomposition (SVD) of a given matrix A. **SVD** is a matrix factorization technique that decomposes a matrix into three separate matrices: **U**, **S**, and **V t**. The SVD of a matrix **A** with dimensions **m**×**n** is represented as: **A=U∗**S**∗**Vt\*\*\*\*
-  - **U** is the left singular vector matrix. It has orthogonal vectors that span the column space and gives information about how the columns of matrix A are related to each other.
-  - **S** is the singular value matrix. It has singular values that are the diagonal entries of the diagonal matrix representing the magnitudes of the singular vectors.
-  - **Vt** is the conjugate transpose of the right singular vector matrix. It has orthogonal vectors that span the row space and gives information about how the rows of matrix A are related to each other.
-- **scipy.linalg.diagsvd(s, _M_ , N)**
-  - **Parameters** **:**
-    - s(M,) or (N,) array_like - Singular values
-    - M : int, Size of the matrix whose singular values are s.
-    - **N :** int, Size of the matrix whose singular values are _s_ .
-  - **Returns:** **\*S\*\***(M, N) ndarray\*\*The S-matrix in the singular value decomposition
-
-# IMPORTANT TERMS :
-
-- **cA (Approximation Coefficients):** These coefficients represent the approximation of the input signal at a certain scale or level of resolution. They capture the low-frequency components of the signal. When performing the DWT, the input signal is filtered to retain only the approximation coefficients at each level.
-- **cD (Detail Coefficients):** These coefficients represent the details or high-frequency components of the input signal that are discarded during the approximation. They capture the high-frequency variations or details of the signal. The detail coefficients are obtained by filtering the input signal to retain only the high-frequency components at each level.
-
 # MATHEMATICAL FORMULAES :
 
 1. **Color Space Transformation from RGB to YIQ:**
